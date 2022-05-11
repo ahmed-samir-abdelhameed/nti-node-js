@@ -20,24 +20,9 @@ const readFromStorage = () => {
     return data
 }
 const writeToStorage = (data) => localStorage.setItem("tasks", JSON.stringify(data))
-// if(addForm){
-//     addForm.addEventListener("submit", function(e){
-//         e.preventDefault()
-//         task = {
-//             title : this.elements.title.value,
-//             content : this.elements.content.value,
-//             dueDate : this.elements.dueDate.value,
-//             status:false,
-//             id: Date.now()
-//         }
-//         const allTasks = readFromStorage()
-//         allTasks.push(task)
-//         writeToStorage(allTasks)
-//         this.reset()
-//         window.location.href="index.html"
-//     })
 
-// }
+
+
 const createMyOwnElements = (parent, element, classes, txt, attributes = []) => {
     let myEle = document.createElement(element)
     if (classes) myEle.classList = classes
@@ -143,20 +128,20 @@ if (edit_ele) {
 
 
 
-// if (dataWrap) showData()
-// if (edit_ele) {
-//     edit_ele.addEventListener("submit", function (e) {
-//         e.preventDefault()
-//         let task = {}
-//         tableHeads.forEach(head => {
-//             if (head.hasDeafult && head.el) task[head.el] = head.default
-//             else if   (edit_ele)elements[head.el].value =(head.el) (task)[head.el]
-//         })
-//         console.log(task)
-//         const allTasks = readFromStorage()
-//         allTasks.push(task)
-//         writeToStorage(allTasks)
-//         this.reset()
-//         window.location.href = "index.html"
-//     })}
+if (dataWrap) showData()
+if (edit_ele) {
+    edit_ele.addEventListener("submit", function(e){
+        e.preventDefault()
+        let task = {}
+        tableHeads.forEach(head =>{
+            if (head.hasDeafult && head.el) task[head.el] = head.default
+            else if (head.el) task[head.el] = addForm.elements[head.el].value
+        })
+        console.log(task)
+        const allTasks = readFromStorage()
+        allTasks.push(task)
+        writeToStorage(allTasks)
+        this.reset()
+        window.location.href = "index.html"
+    })}
 
