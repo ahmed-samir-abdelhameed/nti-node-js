@@ -1,0 +1,12 @@
+const express = require("express")
+require("dotenv").config()
+const hbs = require("hbs")
+const path = require("path")
+const app = express()
+app.set("view engine", "hbs")
+app.set("views", path.join(__dirname, "../resources/views"))
+hbs.registerPartials(path.join(__dirname, "../resources/layouts"))
+app.use(express.urlencoded({ extended: true }))
+const userRoute = require("../routes/user.route")
+app.use(userRoute)
+module.exports = app
