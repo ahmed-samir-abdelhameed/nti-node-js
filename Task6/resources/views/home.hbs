@@ -5,7 +5,7 @@
  <table class="table table-stripped">
             <thead>
             <th>Name</th>
-            <th>Account Number</th>
+            <th>Account number</th>
             <th>Actions</th>
         </thead>
         <tbody>
@@ -13,18 +13,18 @@
             {{#each data}}
             <tr>
                 <td>{{this.name}}</td>
-                <td>{{this.id}}</td>
+                <td>{{this._id}}</td>
                 
                 <td>
-                    <a href="/showuser/{{id}}" class="btn btn-primary mx-3">Show</a>
-                     <a href="/deluser/{{_id}}" class="btn btn-danger mx-3">delete</a>
+                    <a href="/showuser/{{_id}}" class="btn btn-primary mx-3">show</a>
+                    <a href="/deluser/{{_id}}" class="btn btn-danger mx-3">delete</a>
                 </td>
             </tr>
             {{/each}}
             {{else}}
             <tr class="alert alert-danger"> 
              <td colspan="4" >
-                 no users
+                no users
              </td>
             </tr>
             {{/if}}              

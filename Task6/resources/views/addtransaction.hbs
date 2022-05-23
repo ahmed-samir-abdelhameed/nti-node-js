@@ -1,13 +1,13 @@
 {{>header}}
 {{>navbar}}
 <section class="container my-4">
-    <h3 class="text-center text-primary my-3">Add transaction</h3>
-    <form  method="POST">
+    <h3 class="text-center text-primary my-3">add transaction</h3>
+    <form action="" method="POST">
         <div class="mb-3">
-            <input class="form-control"  value={{user.id}} disabled>
+            <input class="form-control"  value={{user._id}} disabled >
         </div>
         <div class="mb-3">
-            <input name="value" class="form-control" placeholder="Value" >
+            <input name="value" class="form-control" placeholder="Value"  >
         </div>
        <div class="mb-3">
         <select name="type"  class="form-control" id="type">
@@ -17,7 +17,7 @@
        </select>
         </div>
       <div class="mb-3">
-            <button class="btn btn-primary">Add transaction</button>
+            <button class="btn btn-primary">Add transction</button>
         </div>
     </form>
 </section>

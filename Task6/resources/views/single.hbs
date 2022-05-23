@@ -1,0 +1,52 @@
+{{>header}}
+{{>navbar}}
+<section class="container">
+    <h3 class="text-center text-primary mt-5">Single user</h3>
+ <table class="table table-stripped">
+        <thead>
+            <th>AccNum ID</th>
+            <th>name</th>
+            <th>balnace</th>
+            <th> last transction</th>
+            <th>transction</th>
+
+        </thead>
+        <tbody>
+            <tr>
+                {{#unless user}}
+                <tr class="alert alert-danger">
+                <td colspan="5"> not found</td>
+                </tr>
+                {{else}}
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.balnace}}$</td>
+                {{#if showrtans}}
+                <td>
+                  <table class="table table-stripped">
+
+                     <tr class="alert alert-primary">
+                    <th>transaction </th>
+                    <th>value</th>
+                    </tr>
+                {{#each user.transction}}
+                                    <tr>
+
+                <td><b>{{this.type}}</b> </td>
+                <td><b>{{this.value}}$$</b> </td> 
+                </tr>
+
+                {{/each}}
+                 </table>
+                 </td>
+                {{else}}
+                <td>no transctions</td>
+                {{/if}}
+                    <td><a href="addtransaction/{{user._id}}" class="btn btn-danger mx-3">add transction</a></td>
+
+              {{/unless }}
+             
+
+              <tr>
+         </tbody>
+    </table>
