@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/test");
+const mongoose = require("mongoose")
+mongoose.connect("mongodb://localhost:27017/test")
 const User = mongoose.model("users", {
   name: {
     type: String,
@@ -11,10 +11,10 @@ const User = mongoose.model("users", {
     required: true,
   },
   email: {},
-});
-const Users = new User({ name: "ahmed", age: 22 });
+})
+const Users = new User({ name: "ahmed", age: 22 })
 Users.save()
   .then((res) => console.log(res))
   .catch((e) => {
-    console.log(e);
-  });
+    console.log(e)
+  })

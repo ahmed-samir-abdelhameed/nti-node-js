@@ -1,19 +1,19 @@
-const fs = require("fs");
+const fs = require("fs")
 const writetoJson = (data, filename) => {
   try {
-    fs.writeFileSync(filename, JSON.stringify(data));
+    fs.writeFileSync(filename, JSON.stringify(data))
   } catch (e) {
-    console.log(e.message);
+    console.log(e.message)
   }
-};
+}
 const readFromJson = (filename) => {
-  let data = [];
+  let data = []
   try {
-    data = JSON.parse(fs.readFileSync(filename));
-    if (!Array.isArray(data)) throw new Error();
+    data = JSON.parse(fs.readFileSync(filename))
+    if (!Array.isArray(data)) throw new Error()
   } catch (e) {
-    data = [];
+    data = []
   }
-  return data;
-};
-module.exports = { writetoJson, readFromJson };
+  return data
+}
+module.exports = { writetoJson, readFromJson }

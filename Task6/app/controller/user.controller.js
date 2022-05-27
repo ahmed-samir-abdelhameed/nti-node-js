@@ -18,7 +18,7 @@ const addNewCustomer = async (req, res) => {
     await user.save()
     res.redirect("/")
   } catch (e) {
-    res.send(e.message);
+    res.send(e.message)
   }
 };
 const single = async (req, res) => {
@@ -46,23 +46,23 @@ const deleteuser = async (req, res) => {
 }
 const addtransactionPost = async (req, res) => {
   let id = req.params.id;
-  let trans = { ...req.body };
+  let trans = { ...req.body }
   try {
     const user = await userMod.findOneAndUpdate(
       { _id: id },
       { $push: { transction: trans } }
-    );
-    res.redirect(`/showuser/${id}`);
+    )
+    res.redirect(`/showuser/${id}`)
   } catch (e) {
-    res.send("error");
+    res.send("error")
   }
-};
+}
 const addtransaction = async (req, res) => {
   let id = req.params.id;
   try {
-    const user = await userMod.findById({ _id: id });
-    if (user) showrtans = user.transction.length;
-    res.render("addtransaction", { pageTitle: "Single-User", user, showrtans });
+    const user = await userMod.findById({ _id: id })
+    if (user) showrtans = user.transction.length
+    res.render("addtransaction", { pageTitle: "Single-User", user, showrtans })
   } catch (e) {
     res.send("errow")
   }
