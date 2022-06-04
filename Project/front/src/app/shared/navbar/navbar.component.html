@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Ecommerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link"  routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="products">products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="cart">cart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  routerLink="register">register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login" *ngIf="!global.isLogIn">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="edit-profile" *ngIf="!global.isLogIn">profile image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="global.isLogIn" (click)="handleLogOut()">LogOut</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
